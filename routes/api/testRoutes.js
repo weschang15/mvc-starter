@@ -1,7 +1,6 @@
 const test = require("express").Router();
+const { testController } = require("../../controllers");
 
-test.get("/", (req, res) => {
-  res.status(200).send("Success, it works!");
-});
+test.get("/", testController.get);
 
 module.exports = test;

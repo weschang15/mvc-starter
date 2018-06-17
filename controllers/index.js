@@ -6,4 +6,6 @@
  *
  */
 
-module.exports = {};
+const testController = require("./testController");
+
+module.exports = { testController };
