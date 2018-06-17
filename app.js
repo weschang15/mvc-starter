@@ -43,7 +43,7 @@ app.use(
 );
 
 // Configure application to use our custom routing
-app.use("/api/v1", api.testRoutes);
+app.use("/api/v1/test", api.testRoutes);
 
 // Configure application to use custom middleware
 app.use(apiErrorHandler);
