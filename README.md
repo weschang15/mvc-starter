@@ -11,36 +11,24 @@ _Example_
 ```bash
 $ cd projects
 $ git clone https://github.com/weschang15/mvc-starter.git someProject
+$ npm install
 ```
 
 ## Where to start
 
-Once all dependencies are installed you will have to do some minor configuration.
-
-1.  Create a .env file
-2.  Add the following environment variables
-
-```
-# Environment variables are case sensitive. If the are all caps here, they need to be all caps everywhere else
-
-# express-session package requires these. They can be any random string of characters
-SESSION_SECRET=
-SESSION_KEY=
-
-# Database configuration used inside of app.js to bootstrap session store
-# These can be used within sequelize config file
-DB_HOST=
-DB_PORT=
-DB_USER=
-DB_PASSWORD=
-DB_DATABASE=
-```
-
-After that is complete, you can run the following NPM script to kickstart a local server running on http://localhost:4000/ with **nodemon** configured to watch for changes.
+Once all dependencies are installed you may run a setup script of your choosing. Want to use MySQL and Sequelize?
 
 ```bash
-$ npm run server
+$ npm run setup:mysql
 ```
+
+Feel like using MongoDB with Mongoose instead? (this script is not yet complete...)
+
+```bash
+$ npm run setup:mongo
+```
+
+Both of these scripts will configure environment variables for you located in `.env` at the root of the project. **You must provide a value for these.**
 
 #### App.js
 
