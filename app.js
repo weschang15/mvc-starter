@@ -1,7 +1,7 @@
 const express = require("express");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
-const MySQLStore = require("express-mysql-session")(session);
+//= require session store
 const app = express();
 
 // Custom modules
@@ -11,17 +11,8 @@ const api = require("./routes/api");
 // Allow application to set cookies with req.cookies
 app.use(cookieParser());
 
-// Configure options for MYSQL session store
-const options = {
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE
-};
-
-// Register MYSQL database table to store server sessions
-const sessionStore = new MySQLStore(options);
+//= configure store options
+//= create new session store
 
 // Create a session for each visitor to track logged in users from request to request
 app.use(
